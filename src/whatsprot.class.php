@@ -1492,7 +1492,7 @@ class WhatsProt
      */
     public function sendOfflineStatus()
     {
-        $messageNode = new ProtocolNode('presence', ['type' => 'inactive'], null, '');
+        $messageNode = new ProtocolNode('presence', ['type' => 'unavailable'], null, '');
         $this->sendNode($messageNode);
     }
 
@@ -1537,7 +1537,7 @@ class WhatsProt
      *
      * @param string $type The presence status.
      */
-    public function sendPresence($type = 'active')
+    public function sendPresence($type = 'available')
     {
         $node = new ProtocolNode('presence',
             [
